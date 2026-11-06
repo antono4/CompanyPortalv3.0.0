@@ -23,6 +23,23 @@ Aplikasi intranet perusahaan berbasis **PHP 8 + MySQL/MariaDB** dengan tampilan
 - Pengaturan perusahaan (admin only)
 - Profil, foto profil, dan Ganti Password
 
+## Tampilan Aplikasi
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/dashboard.jpg" alt="Dashboard" width="100%"><br><sub><b>Dashboard</b> — ringkasan data, aktivitas, pengumuman, dan pintasan</sub></td>
+    <td width="50%"><img src="docs/screenshots/login.jpg" alt="Login" width="100%"><br><sub><b>Login</b> — autentikasi dengan proteksi CSRF</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/employees.jpg" alt="Karyawan" width="100%"><br><sub><b>Karyawan</b> — daftar karyawan aktif dan nonaktif</sub></td>
+    <td width="50%"><img src="docs/screenshots/attendance.jpg" alt="Absensi" width="100%"><br><sub><b>Absensi</b> — jam realtime, shift, dan riwayat kehadiran</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/announcements.jpg" alt="Pengumuman" width="100%"><br><sub><b>Pengumuman</b> — berita utama dan artikel perusahaan</sub></td>
+    <td width="50%"><img src="docs/screenshots/documents.jpg" alt="Dokumen" width="100%"><br><sub><b>Dokumen</b> — repositori dokumen resmi perusahaan</sub></td>
+  </tr>
+</table>
+
 ## Kebutuhan
 
 - PHP 8.1+ dengan ekstensi `pdo_mysql`, `mbstring`, `fileinfo`
@@ -48,7 +65,7 @@ install/
   index.php      Installer web
 public/
   index.php      Front controller
-  assets/        Bootstrap, AdminLTE, Bootstrap Icons, CSS/JS aplikasi
+  assets/        Bootstrap, AdminLTE, Tabler Icons, CSS/JS aplikasi
 storage/
   logs/          Log PHP
   sessions/      File sesi
