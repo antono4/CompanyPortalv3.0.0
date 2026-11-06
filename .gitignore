@@ -1,0 +1,26 @@
+# Local configuration
+/config/database.php
+/config/installed.lock
+
+# Runtime data
+/storage/sessions/*
+!/storage/sessions/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+/storage/uploads/**
+!/storage/uploads/documents/.gitkeep
+!/storage/uploads/files/.gitkeep
+
+# Logs and temp files
+*.log
+*.tmp
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Vendor dependency folders (assets are vendored under public/assets/vendor)
+/vendor/
+/node_modules/

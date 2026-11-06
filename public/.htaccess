@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Serve existing assets directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Front controller
+RewriteRule ^ index.php [QSA,L]
