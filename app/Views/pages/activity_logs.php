@@ -10,14 +10,14 @@ require __DIR__ . '/../layouts/admin_header.php';
         onsubmit="return confirm('Hapus seluruh log aktivitas? Tindakan ini tidak dapat dibatalkan.');">
     <?= csrf_field(); ?>
     <button type="submit" class="btn btn-outline-danger">
-      <i class="bi bi-trash me-1"></i>Bersihkan Log
+      <i class="ti ti-trash me-1"></i>Bersihkan Log
     </button>
   </form>
 </div>
 
 <div class="card">
   <div class="card-header card-toolbar">
-    <h2 class="card-title"><i class="bi bi-clock-history me-2 text-primary"></i>Log Aktivitas</h2>
+    <h2 class="card-title"><i class="ti ti-history me-2 text-primary"></i>Log Aktivitas</h2>
     <span class="badge badge-soft"><?= (int) $total; ?> entri</span>
   </div>
   <div class="card-body p-0">
@@ -46,7 +46,7 @@ require __DIR__ . '/../layouts/admin_header.php';
       </div>
     <?php else: ?>
       <div class="empty-state">
-        <i class="bi bi-clock-history"></i>
+        <i class="ti ti-history"></i>
         <h6>Belum ada log</h6>
         <p>Aktivitas pengguna akan tercatat otomatis di sini.</p>
       </div>

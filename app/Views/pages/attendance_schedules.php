@@ -12,17 +12,17 @@ require __DIR__ . '/../layouts/admin_header.php';
   </div>
   <div class="d-flex flex-wrap gap-2">
     <a href="<?= url('/attendance'); ?>" class="btn btn-outline-secondary">
-      <i class="bi bi-arrow-left me-1"></i>Kembali ke Absensi
+      <i class="ti ti-arrow-left me-1"></i>Kembali ke Absensi
     </a>
     <a href="<?= url('/attendance/schedules/create'); ?>" class="btn btn-primary">
-      <i class="bi bi-plus-lg me-1"></i>Tambah Jadwal
+      <i class="ti ti-plus me-1"></i>Tambah Jadwal
     </a>
   </div>
 </div>
 
 <div class="card">
   <div class="card-header card-toolbar">
-    <h2 class="card-title"><i class="bi bi-calendar2-week me-2 text-primary"></i>Daftar Jadwal Absensi</h2>
+    <h2 class="card-title"><i class="ti ti-calendar-week me-2 text-primary"></i>Daftar Jadwal Absensi</h2>
     <span class="badge badge-soft"><?= count($schedules); ?> jadwal</span>
   </div>
   <div class="card-body p-0">
@@ -66,13 +66,13 @@ require __DIR__ . '/../layouts/admin_header.php';
                   <div class="table-actions">
                     <a href="<?= url('/attendance/schedules/' . (int) $row['id'] . '/edit'); ?>"
                        class="btn btn-sm btn-outline-primary btn-icon" aria-label="Edit jadwal">
-                      <i class="bi bi-pencil"></i>
+                      <i class="ti ti-pencil"></i>
                     </a>
                     <form method="post" action="<?= url('/attendance/schedules/' . (int) $row['id'] . '/delete'); ?>"
                           onsubmit="return confirm('Hapus jadwal ini? Riwayat absensi tetap tersimpan.');">
                       <?= csrf_field(); ?>
                       <button type="submit" class="btn btn-sm btn-outline-danger btn-icon" aria-label="Hapus jadwal">
-                        <i class="bi bi-trash"></i>
+                        <i class="ti ti-trash"></i>
                       </button>
                     </form>
                   </div>
@@ -84,11 +84,11 @@ require __DIR__ . '/../layouts/admin_header.php';
       </div>
     <?php else: ?>
       <div class="empty-state py-5">
-        <i class="bi bi-calendar2-week"></i>
+        <i class="ti ti-calendar-week"></i>
         <h6>Belum ada jadwal absensi</h6>
         <p>Tambahkan jadwal agar karyawan dapat melakukan absen masuk.</p>
         <a href="<?= url('/attendance/schedules/create'); ?>" class="btn btn-primary btn-sm mt-3">
-          <i class="bi bi-plus-lg me-1"></i>Tambah Jadwal
+          <i class="ti ti-plus me-1"></i>Tambah Jadwal
         </a>
       </div>
     <?php endif; ?>

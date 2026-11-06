@@ -12,7 +12,7 @@ require __DIR__ . '/../layouts/admin_header.php';
 
 <div class="card form-card">
   <div class="card-header">
-    <h2 class="card-title"><i class="bi bi-gear me-2 text-primary"></i>Pengaturan Perusahaan</h2>
+    <h2 class="card-title"><i class="ti ti-settings me-2 text-primary"></i>Pengaturan Perusahaan</h2>
   </div>
   <div class="card-body">
     <form method="post" action="<?= url('/settings'); ?>">
@@ -68,7 +68,7 @@ require __DIR__ . '/../layouts/admin_header.php';
 
       <div class="d-flex justify-content-end gap-2 mt-4">
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-save me-1"></i>Simpan Pengaturan
+          <i class="ti ti-device-floppy me-1"></i>Simpan Pengaturan
         </button>
       </div>
     </form>

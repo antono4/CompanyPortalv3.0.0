@@ -8,14 +8,14 @@ require __DIR__ . '/../layouts/admin_header.php';
   <p class="subtitle">Struktur organisasi dan unit kerja perusahaan.</p>
   <?php if (is_admin()): ?>
     <a href="<?= url('/departments/create'); ?>" class="btn btn-primary">
-      <i class="bi bi-plus-lg me-1"></i>Tambah Departemen
+      <i class="ti ti-plus me-1"></i>Tambah Departemen
     </a>
   <?php endif; ?>
 </div>
 
 <div class="card">
   <div class="card-header card-toolbar">
-    <h2 class="card-title"><i class="bi bi-diagram-3 me-2 text-primary"></i>Daftar Departemen</h2>
+    <h2 class="card-title"><i class="ti ti-sitemap me-2 text-primary"></i>Daftar Departemen</h2>
     <span class="badge badge-soft"><?= count($departments); ?> departemen</span>
   </div>
   <div class="card-body p-0">
@@ -37,7 +37,7 @@ require __DIR__ . '/../layouts/admin_header.php';
                 <td>
                   <div class="d-flex align-items-center gap-2">
                     <span class="stat-icon bg-primary-subtle text-primary" style="width:34px;height:34px;font-size:.95rem;">
-                      <i class="bi bi-building"></i>
+                      <i class="ti ti-building"></i>
                     </span>
                     <span class="fw-semibold"><?= e($row['department_name']); ?></span>
                   </div>
@@ -58,13 +58,13 @@ require __DIR__ . '/../layouts/admin_header.php';
                     <div class="table-actions">
                       <a href="<?= url('/departments/' . (int) $row['id'] . '/edit'); ?>"
                          class="btn btn-sm btn-outline-primary btn-icon" aria-label="Edit departemen">
-                        <i class="bi bi-pencil"></i>
+                        <i class="ti ti-pencil"></i>
                       </a>
                       <form method="post" action="<?= url('/departments/' . (int) $row['id'] . '/delete'); ?>"
                             onsubmit="return confirm('Hapus departemen ini?');">
                         <?= csrf_field(); ?>
                         <button type="submit" class="btn btn-sm btn-outline-danger btn-icon" aria-label="Hapus departemen">
-                          <i class="bi bi-trash"></i>
+                          <i class="ti ti-trash"></i>
                         </button>
                       </form>
                     </div>
@@ -77,7 +77,7 @@ require __DIR__ . '/../layouts/admin_header.php';
       </div>
     <?php else: ?>
       <div class="empty-state">
-        <i class="bi bi-diagram-3"></i>
+        <i class="ti ti-sitemap"></i>
         <h6>Belum ada departemen</h6>
         <p>Tambahkan departemen untuk mengelompokkan karyawan.</p>
       </div>

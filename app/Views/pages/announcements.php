@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+// This page carries its own prominent title, so skip the default page title bar.
+$hidePageHeader = true;
+
 require __DIR__ . '/../layouts/admin_header.php';
 
 $featured = $announcements[0] ?? null;
@@ -14,7 +17,7 @@ $rest     = array_slice($announcements, 1);
   </div>
   <?php if (is_admin()): ?>
     <a href="<?= url('/announcements/create'); ?>" class="btn btn-primary">
-      <i class="bi bi-plus-lg me-1"></i>Tulis Berita
+      <i class="ti ti-plus me-1"></i>Tulis Berita
     </a>
   <?php endif; ?>
 </div>
@@ -28,32 +31,32 @@ $rest     = array_slice($announcements, 1);
     <span class="news-hero-scrim"></span>
 
     <div class="news-hero-content">
-      <span class="news-kicker"><i class="bi bi-star-fill"></i>Berita Utama</span>
+      <span class="news-kicker"><i class="ti ti-star-filled"></i>Berita Utama</span>
       <h2 class="news-hero-title">
         <a href="<?= url('/announcements/' . (int) $featured['id']); ?>"><?= e($featured['title']); ?></a>
       </h2>
       <p class="news-hero-excerpt"><?= e(excerpt($featured['description'], 190)); ?></p>
       <div class="news-meta news-meta-light">
-        <span><i class="bi bi-person"></i><?= e($featured['author'] ?? 'Admin'); ?></span>
-        <span><i class="bi bi-calendar3"></i><?= e(fmt_datetime($featured['created_at'])); ?></span>
-        <span><i class="bi bi-clock"></i><?= reading_time($featured['description']); ?> menit baca</span>
+        <span><i class="ti ti-user"></i><?= e($featured['author'] ?? 'Admin'); ?></span>
+        <span><i class="ti ti-calendar"></i><?= e(fmt_datetime($featured['created_at'])); ?></span>
+        <span><i class="ti ti-clock"></i><?= reading_time($featured['description']); ?> menit baca</span>
       </div>
     </div>
 
     <div class="news-hero-actions">
       <a href="<?= url('/announcements/' . (int) $featured['id']); ?>" class="btn btn-sm btn-light">
-        <i class="bi bi-book me-1"></i>Baca
+        <i class="ti ti-book me-1"></i>Baca
       </a>
       <?php if (is_admin()): ?>
         <a href="<?= url('/announcements/' . (int) $featured['id'] . '/edit'); ?>"
            class="btn btn-sm btn-light" aria-label="Edit berita utama">
-          <i class="bi bi-pencil"></i>
+          <i class="ti ti-pencil"></i>
         </a>
         <form method="post" action="<?= url('/announcements/' . (int) $featured['id'] . '/delete'); ?>"
               onsubmit="return confirm('Hapus berita ini?');">
           <?= csrf_field(); ?>
           <button type="submit" class="btn btn-sm btn-light text-danger" aria-label="Hapus berita utama">
-            <i class="bi bi-trash"></i>
+            <i class="ti ti-trash"></i>
           </button>
         </form>
       <?php endif; ?>
@@ -64,7 +67,7 @@ $rest     = array_slice($announcements, 1);
 <?php if ($rest !== []): ?>
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h3 class="h5 fw-bold mb-0">Berita Lainnya</h3>
-    <span class="text-secondary small"><i class="bi bi-collection me-1"></i><?= count($announcements); ?> artikel</span>
+    <span class="text-secondary small"><i class="ti ti-stack-2 me-1"></i><?= count($announcements); ?> artikel</span>
   </div>
 
   <div class="row g-3">
@@ -77,7 +80,7 @@ $rest     = array_slice($announcements, 1);
             <?php if ($image !== null): ?>
               <img src="<?= e($image); ?>" alt="<?= e($row['title']); ?>" loading="lazy">
             <?php else: ?>
-              <span class="news-placeholder"><i class="bi bi-megaphone"></i></span>
+              <span class="news-placeholder"><i class="ti ti-speakerphone"></i></span>
             <?php endif; ?>
             <span class="news-date-chip"><?= e(fmt_date($row['created_at'], 'd M')); ?></span>
           </a>
@@ -90,26 +93,26 @@ $rest     = array_slice($announcements, 1);
             <p class="news-card-excerpt"><?= e(excerpt($row['description'], 120)); ?></p>
 
             <div class="news-meta mt-auto">
-              <span><i class="bi bi-person"></i><?= e($row['author'] ?? 'Admin'); ?></span>
-              <span><i class="bi bi-clock"></i><?= reading_time($row['description']); ?> menit</span>
+              <span><i class="ti ti-user"></i><?= e($row['author'] ?? 'Admin'); ?></span>
+              <span><i class="ti ti-clock"></i><?= reading_time($row['description']); ?> menit</span>
             </div>
 
             <div class="news-card-footer">
               <a href="<?= url('/announcements/' . (int) $row['id']); ?>" class="news-read-more">
-                Baca selengkapnya <i class="bi bi-arrow-right"></i>
+                Baca selengkapnya <i class="ti ti-arrow-right"></i>
               </a>
 
               <?php if (is_admin()): ?>
                 <div class="table-actions">
                   <a href="<?= url('/announcements/' . (int) $row['id'] . '/edit'); ?>"
                      class="btn btn-sm btn-outline-primary btn-icon" aria-label="Edit pengumuman">
-                    <i class="bi bi-pencil"></i>
+                    <i class="ti ti-pencil"></i>
                   </a>
                   <form method="post" action="<?= url('/announcements/' . (int) $row['id'] . '/delete'); ?>"
                         onsubmit="return confirm('Hapus pengumuman ini?');">
                     <?= csrf_field(); ?>
                     <button type="submit" class="btn btn-sm btn-outline-danger btn-icon" aria-label="Hapus pengumuman">
-                      <i class="bi bi-trash"></i>
+                      <i class="ti ti-trash"></i>
                     </button>
                   </form>
                 </div>
@@ -126,7 +129,7 @@ $rest     = array_slice($announcements, 1);
   <div class="card">
     <div class="card-body">
       <div class="empty-state">
-        <i class="bi bi-newspaper"></i>
+        <i class="ti ti-news"></i>
         <h6>Belum ada berita</h6>
         <p>Berita dan pengumuman yang dipublikasikan akan tampil di sini.</p>
       </div>

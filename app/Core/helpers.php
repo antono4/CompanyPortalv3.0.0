@@ -18,10 +18,23 @@ function url(string $path = ''): string
     return App::url($path);
 }
 
-/** URL to a file inside public/assets. */
+/**
+ * URL to a file inside public/assets.
+ *
+ * The file modification time is appended so browsers refresh cached CSS/JS
+ * after a deployment instead of serving a stale copy.
+ */
 function asset(string $path): string
 {
-    return App::url('assets/' . ltrim($path, '/'));
+    $path = ltrim($path, '/');
+    $url  = App::url('assets/' . $path);
+    $file = APP_ROOT . '/public/assets/' . $path;
+
+    if (is_file($file)) {
+        $url .= '?v=' . filemtime($file);
+    }
+
+    return $url;
 }
 
 /** Hidden CSRF input field. */

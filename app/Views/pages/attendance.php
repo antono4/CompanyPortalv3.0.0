@@ -30,7 +30,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     </span>
     <?php if (is_admin()): ?>
       <a href="<?= url('/attendance/schedules'); ?>" class="btn btn-outline-primary">
-        <i class="bi bi-calendar2-week me-1"></i>Kelola Jadwal
+        <i class="ti ti-calendar-week me-1"></i>Kelola Jadwal
       </a>
     <?php endif; ?>
   </div>
@@ -54,7 +54,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
 
           <div class="att-clock" id="attClock"><?= e($serverNow); ?></div>
           <div class="small text-white-50 mb-4">
-            <i class="bi bi-geo-alt me-1"></i>Waktu server (WIB) &middot; sinkron otomatis
+            <i class="ti ti-map-pin me-1"></i>Waktu server (WIB) &middot; sinkron otomatis
           </div>
 
           <div class="mt-auto">
@@ -73,14 +73,14 @@ $stateBadge = static fn (string $state): string => match ($state) {
     <div class="col-xl-8">
       <div class="card h-100">
         <div class="card-header card-toolbar">
-          <h2 class="card-title"><i class="bi bi-calendar-check me-2 text-primary"></i>Jadwal Hari Ini</h2>
+          <h2 class="card-title"><i class="ti ti-calendar-check me-2 text-primary"></i>Jadwal Hari Ini</h2>
           <span class="badge badge-soft"><?= count($schedules); ?> shift</span>
         </div>
 
         <div class="card-body">
           <?php if ($schedules === []): ?>
             <div class="empty-state">
-              <i class="bi bi-calendar-x"></i>
+              <i class="ti ti-calendar-x"></i>
               <h6>Tidak ada jadwal hari ini</h6>
               <p>Jadwal absensi untuk hari <?= e($dayLabel); ?> belum diatur.</p>
             </div>
@@ -95,7 +95,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
                   <div>
                     <h3 class="h6 fw-bold mb-1"><?= e($schedule['name']); ?></h3>
                     <div class="small text-secondary">
-                      <i class="bi bi-geo-alt me-1"></i><?= e($schedule['location'] ?: 'Kantor Pusat'); ?>
+                      <i class="ti ti-map-pin me-1"></i><?= e($schedule['location'] ?: 'Kantor Pusat'); ?>
                     </div>
                   </div>
                   <span class="badge att-state-badge <?= $stateBadge($state['state']); ?>" data-shift-badge>
@@ -115,7 +115,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
                 </div>
 
                 <div class="small text-secondary mt-2">
-                  <i class="bi bi-hourglass-split me-1"></i>
+                  <i class="ti ti-hourglass me-1"></i>
                   Toleransi <?= (int) $schedule['late_tolerance']; ?> menit &middot;
                   masuk paling lambat <?= e($state['late_after']); ?>
                 </div>
@@ -143,12 +143,12 @@ $stateBadge = static fn (string $state): string => match ($state) {
                     <form method="post" action="<?= url('/attendance/check-out'); ?>">
                       <?= csrf_field(); ?>
                       <button type="submit" class="btn btn-outline-danger">
-                        <i class="bi bi-box-arrow-right me-1"></i>Absen Keluar
+                        <i class="ti ti-logout-2 me-1"></i>Absen Keluar
                       </button>
                     </form>
                   <?php else: ?>
                     <span class="text-success small fw-semibold">
-                      <i class="bi bi-check-circle-fill me-1"></i>Absensi hari ini selesai
+                      <i class="ti ti-circle-check-filled me-1"></i>Absensi hari ini selesai
                     </span>
                   <?php endif; ?>
                 </div>
@@ -165,13 +165,13 @@ $stateBadge = static fn (string $state): string => match ($state) {
                 <form method="post" action="<?= url('/attendance/check-in'); ?>" class="ms-auto">
                   <?= csrf_field(); ?>
                   <button type="submit" class="btn btn-success">
-                    <i class="bi bi-fingerprint me-1"></i>Absen Masuk Sekarang
+                    <i class="ti ti-fingerprint me-1"></i>Absen Masuk Sekarang
                   </button>
                 </form>
               </div>
             <?php else: ?>
               <div class="alert alert-warning mb-0">
-                <i class="bi bi-exclamation-triangle me-1"></i>
+                <i class="ti ti-alert-triangle me-1"></i>
                 Belum ada jadwal untuk hari ini, sehingga absen masuk belum dapat dilakukan.
               </div>
             <?php endif; ?>
@@ -185,7 +185,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     <div class="col-6 col-xl-3">
       <div class="card att-stat h-100">
         <div class="card-body d-flex align-items-center gap-3">
-          <span class="stat-icon bg-success-subtle text-success"><i class="bi bi-person-check"></i></span>
+          <span class="stat-icon bg-success-subtle text-success"><i class="ti ti-user-check"></i></span>
           <div>
             <div class="att-stat-value" id="attSumHadir"><?= (int) $summary['hadir']; ?></div>
             <div class="small text-secondary">Hadir hari ini</div>
@@ -196,7 +196,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     <div class="col-6 col-xl-3">
       <div class="card att-stat h-100">
         <div class="card-body d-flex align-items-center gap-3">
-          <span class="stat-icon bg-warning-subtle text-warning"><i class="bi bi-alarm"></i></span>
+          <span class="stat-icon bg-warning-subtle text-warning"><i class="ti ti-alarm"></i></span>
           <div>
             <div class="att-stat-value" id="attSumTerlambat"><?= (int) $summary['terlambat']; ?></div>
             <div class="small text-secondary">Terlambat</div>
@@ -207,7 +207,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     <div class="col-6 col-xl-3">
       <div class="card att-stat h-100">
         <div class="card-body d-flex align-items-center gap-3">
-          <span class="stat-icon bg-danger-subtle text-danger"><i class="bi bi-person-dash"></i></span>
+          <span class="stat-icon bg-danger-subtle text-danger"><i class="ti ti-user-minus"></i></span>
           <div>
             <div class="att-stat-value" id="attSumBelum"><?= (int) $summary['belum']; ?></div>
             <div class="small text-secondary">Belum absen</div>
@@ -218,7 +218,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     <div class="col-6 col-xl-3">
       <div class="card att-stat h-100">
         <div class="card-body d-flex align-items-center gap-3">
-          <span class="stat-icon bg-primary-subtle text-primary"><i class="bi bi-people"></i></span>
+          <span class="stat-icon bg-primary-subtle text-primary"><i class="ti ti-users"></i></span>
           <div>
             <div class="att-stat-value" id="attSumTotal"><?= (int) $summary['total_user']; ?></div>
             <div class="small text-secondary">Karyawan aktif</div>
@@ -232,7 +232,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     <div class="col-lg-7">
       <div class="card h-100">
         <div class="card-header card-toolbar">
-          <h2 class="card-title"><i class="bi bi-clock-history me-2 text-primary"></i>Riwayat Absensi Saya</h2>
+          <h2 class="card-title"><i class="ti ti-history me-2 text-primary"></i>Riwayat Absensi Saya</h2>
           <span class="badge badge-soft"><?= count($history); ?> catatan</span>
         </div>
         <div class="card-body p-0">
@@ -271,7 +271,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
             </div>
           <?php else: ?>
             <div class="empty-state py-4">
-              <i class="bi bi-clock-history"></i>
+              <i class="ti ti-history"></i>
               <h6>Belum ada riwayat</h6>
               <p>Catatan absensi Anda akan muncul di sini.</p>
             </div>
@@ -309,10 +309,10 @@ $stateBadge = static fn (string $state): string => match ($state) {
                   </div>
                   <div class="small text-secondary text-truncate"><?= e($row['schedule_name'] ?? '-'); ?></div>
                   <div class="att-feed-times">
-                    <span><i class="bi bi-box-arrow-in-right"></i>
+                    <span><i class="ti ti-login-2"></i>
                       <?= $row['check_in'] ? e(substr((string) $row['check_in'], 0, 5)) : '--:--'; ?>
                     </span>
-                    <span><i class="bi bi-box-arrow-right"></i>
+                    <span><i class="ti ti-logout-2"></i>
                       <?= $row['check_out'] ? e(substr((string) $row['check_out'], 0, 5)) : '--:--'; ?>
                     </span>
                   </div>
@@ -321,7 +321,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
             <?php endforeach; ?>
           <?php else: ?>
             <div class="empty-state py-4" id="attFeedEmpty">
-              <i class="bi bi-broadcast"></i>
+              <i class="ti ti-broadcast"></i>
               <h6>Belum ada aktivitas</h6>
               <p>Absensi karyawan hari ini akan tampil di sini secara langsung.</p>
             </div>
@@ -333,7 +333,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
 
   <div class="card mt-3">
     <div class="card-header card-toolbar">
-      <h2 class="card-title"><i class="bi bi-calendar3 me-2 text-primary"></i>Jadwal Mingguan</h2>
+      <h2 class="card-title"><i class="ti ti-calendar me-2 text-primary"></i>Jadwal Mingguan</h2>
       <span class="badge badge-soft"><?= count($weekSchedules); ?> jadwal aktif</span>
     </div>
     <div class="card-body p-0">
@@ -380,7 +380,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
         </div>
       <?php else: ?>
         <div class="empty-state py-4">
-          <i class="bi bi-calendar2-week"></i>
+          <i class="ti ti-calendar-week"></i>
           <h6>Belum ada jadwal</h6>
           <p>Administrator dapat menambahkan jadwal absensi melalui menu Kelola Jadwal.</p>
         </div>
@@ -527,8 +527,8 @@ $stateBadge = static fn (string $state): string => match ($state) {
 
     var times = document.createElement('div');
     times.className = 'att-feed-times';
-    times.innerHTML = '<span><i class="bi bi-box-arrow-in-right"></i>' + (item.check_in || '--:--') +
-      '</span><span><i class="bi bi-box-arrow-right"></i>' + (item.check_out || '--:--') + '</span>';
+    times.innerHTML = '<span><i class="ti ti-login-2"></i>' + (item.check_in || '--:--') +
+      '</span><span><i class="ti ti-logout-2"></i>' + (item.check_out || '--:--') + '</span>';
 
     body.appendChild(top);
     body.appendChild(schedule);
@@ -546,7 +546,7 @@ $stateBadge = static fn (string $state): string => match ($state) {
     if (!items || !items.length) {
       var empty = document.createElement('div');
       empty.className = 'empty-state py-4';
-      empty.innerHTML = '<i class="bi bi-broadcast"></i><h6>Belum ada aktivitas</h6>' +
+      empty.innerHTML = '<i class="ti ti-broadcast"></i><h6>Belum ada aktivitas</h6>' +
         '<p>Absensi karyawan hari ini akan tampil di sini secara langsung.</p>';
       feed.appendChild(empty);
       return;

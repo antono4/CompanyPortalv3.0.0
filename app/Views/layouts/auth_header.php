@@ -23,7 +23,7 @@ try {
   <link rel="shortcut icon" href="<?= asset('img/favicon.ico'); ?>">
   <link rel="apple-touch-icon" sizes="180x180" href="<?= asset('img/apple-touch-icon.png'); ?>">
   <link rel="stylesheet" href="<?= asset('vendor/bootstrap/css/bootstrap.min.css'); ?>">
-  <link rel="stylesheet" href="<?= asset('vendor/bootstrap-icons/bootstrap-icons.min.css'); ?>">
+  <link rel="stylesheet" href="<?= asset('vendor/tabler-icons/tabler-icons.min.css'); ?>">
   <link rel="stylesheet" href="<?= asset('vendor/adminlte/css/adminlte.min.css'); ?>">
   <link rel="stylesheet" href="<?= asset('css/app.css'); ?>">
 </head>

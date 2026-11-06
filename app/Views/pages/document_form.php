@@ -7,13 +7,13 @@ require __DIR__ . '/../layouts/admin_header.php';
 <div class="page-heading">
   <p class="subtitle">Unggah dokumen resmi ke repositori perusahaan.</p>
   <a href="<?= url('/documents'); ?>" class="btn btn-outline-secondary">
-    <i class="bi bi-arrow-left me-1"></i>Kembali
+    <i class="ti ti-arrow-left me-1"></i>Kembali
   </a>
 </div>
 
 <div class="card form-card">
   <div class="card-header">
-    <h2 class="card-title"><i class="bi bi-upload me-2 text-primary"></i>Upload Dokumen</h2>
+    <h2 class="card-title"><i class="ti ti-upload me-2 text-primary"></i>Upload Dokumen</h2>
   </div>
   <div class="card-body">
     <form method="post" action="<?= url('/documents'); ?>" enctype="multipart/form-data">
@@ -42,7 +42,7 @@ require __DIR__ . '/../layouts/admin_header.php';
       <div class="d-flex justify-content-end gap-2 mt-4">
         <a href="<?= url('/documents'); ?>" class="btn btn-outline-secondary">Batal</a>
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-cloud-arrow-up me-1"></i>Upload
+          <i class="ti ti-cloud-upload me-1"></i>Upload
         </button>
       </div>
     </form>

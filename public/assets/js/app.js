@@ -12,7 +12,7 @@
       password.type = isPassword ? 'text' : 'password';
       const icon = toggle.querySelector('i');
       if (icon) {
-        icon.className = isPassword ? 'bi bi-eye-slash' : 'bi bi-eye';
+        icon.className = isPassword ? 'ti ti-eye-off' : 'ti ti-eye';
       }
     });
   }

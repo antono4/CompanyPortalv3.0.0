@@ -36,7 +36,7 @@ try {
   <link rel="apple-touch-icon" sizes="180x180" href="<?= asset('img/apple-touch-icon.png'); ?>">
 
   <link rel="stylesheet" href="<?= asset('vendor/bootstrap/css/bootstrap.min.css'); ?>">
-  <link rel="stylesheet" href="<?= asset('vendor/bootstrap-icons/bootstrap-icons.min.css'); ?>">
+  <link rel="stylesheet" href="<?= asset('vendor/tabler-icons/tabler-icons.min.css'); ?>">
   <link rel="stylesheet" href="<?= asset('vendor/adminlte/css/adminlte.min.css'); ?>">
   <link rel="stylesheet" href="<?= asset('css/app.css'); ?>">
 </head>
@@ -49,12 +49,12 @@ try {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button" aria-label="Buka/tutup sidebar">
-            <i class="bi bi-list"></i>
+            <i class="ti ti-menu-2"></i>
           </a>
         </li>
         <li class="nav-item d-none d-md-block">
           <span class="nav-link text-secondary">
-            <i class="bi bi-grid-1x2 me-1"></i><?= e($companyName); ?>
+            <i class="ti ti-layout-grid me-1"></i><?= e($companyName); ?>
           </span>
         </li>
       </ul>
@@ -62,7 +62,7 @@ try {
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item d-none d-sm-block me-2">
           <span class="badge text-bg-light border">
-            <i class="bi bi-calendar3 me-1"></i><?= date('d M Y'); ?>
+            <i class="ti ti-calendar me-1"></i><?= date('d M Y'); ?>
           </span>
         </li>
 
@@ -82,18 +82,18 @@ try {
             </li>
             <li>
               <a class="dropdown-item" href="<?= url('/profile'); ?>">
-                <i class="bi bi-person me-2"></i>Profil Saya
+                <i class="ti ti-user me-2"></i>Profil Saya
               </a>
             </li>
             <li>
               <a class="dropdown-item" href="<?= url('/change-password'); ?>">
-                <i class="bi bi-key me-2"></i>Ganti Password
+                <i class="ti ti-key me-2"></i>Ganti Password
               </a>
             </li>
             <li><hr class="dropdown-divider"></li>
             <li>
               <a class="dropdown-item text-danger" href="<?= url('/logout'); ?>">
-                <i class="bi bi-box-arrow-right me-2"></i>Keluar
+                <i class="ti ti-logout-2 me-2"></i>Keluar
               </a>
             </li>
           </ul>
@@ -106,7 +106,7 @@ try {
   <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
     <div class="sidebar-brand">
       <a href="<?= url('/dashboard'); ?>" class="brand-link">
-        <span class="brand-mark"><i class="bi bi-buildings"></i></span>
+        <span class="brand-mark"><i class="ti ti-buildings"></i></span>
         <span class="brand-text fw-semibold"><?= e($companyName); ?></span>
       </a>
     </div>
@@ -117,7 +117,7 @@ try {
 
           <li class="nav-item">
             <a href="<?= url('/dashboard'); ?>" class="nav-link <?= nav_active('/dashboard'); ?>">
-              <i class="nav-icon bi bi-speedometer2"></i>
+              <i class="nav-icon ti ti-dashboard"></i>
               <p>Dashboard</p>
             </a>
           </li>
@@ -125,13 +125,13 @@ try {
           <li class="nav-header">ORGANISASI</li>
           <li class="nav-item">
             <a href="<?= url('/departments'); ?>" class="nav-link <?= nav_active('/departments'); ?>">
-              <i class="nav-icon bi bi-diagram-3"></i>
+              <i class="nav-icon ti ti-sitemap"></i>
               <p>Departemen</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?= url('/employees'); ?>" class="nav-link <?= nav_active('/employees'); ?>">
-              <i class="nav-icon bi bi-person-vcard"></i>
+              <i class="nav-icon ti ti-id"></i>
               <p>Karyawan</p>
             </a>
           </li>
@@ -139,25 +139,25 @@ try {
           <li class="nav-header">KONTEN</li>
           <li class="nav-item">
             <a href="<?= url('/attendance'); ?>" class="nav-link <?= App::path() === '/attendance' ? 'active' : ''; ?>">
-              <i class="nav-icon bi bi-fingerprint"></i>
+              <i class="nav-icon ti ti-fingerprint"></i>
               <p>Absensi</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?= url('/announcements'); ?>" class="nav-link <?= nav_active('/announcements'); ?>">
-              <i class="nav-icon bi bi-megaphone"></i>
+              <i class="nav-icon ti ti-speakerphone"></i>
               <p>Pengumuman</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?= url('/documents'); ?>" class="nav-link <?= nav_active('/documents'); ?>">
-              <i class="nav-icon bi bi-folder2-open"></i>
+              <i class="nav-icon ti ti-folder-open"></i>
               <p>Dokumen</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="<?= url('/uploads'); ?>" class="nav-link <?= nav_active('/uploads'); ?>">
-              <i class="nav-icon bi bi-cloud-arrow-up"></i>
+              <i class="nav-icon ti ti-cloud-upload"></i>
               <p>Upload Center</p>
             </a>
           </li>
@@ -166,25 +166,25 @@ try {
             <li class="nav-header">ADMINISTRASI</li>
             <li class="nav-item">
               <a href="<?= url('/users'); ?>" class="nav-link <?= nav_active('/users'); ?>">
-                <i class="nav-icon bi bi-people"></i>
+                <i class="nav-icon ti ti-users"></i>
                 <p>Manajemen User</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= url('/attendance/schedules'); ?>" class="nav-link <?= nav_active('/attendance/schedules'); ?>">
-                <i class="nav-icon bi bi-calendar2-week"></i>
+                <i class="nav-icon ti ti-calendar-week"></i>
                 <p>Jadwal Absensi</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= url('/activity-logs'); ?>" class="nav-link <?= nav_active('/activity-logs'); ?>">
-                <i class="nav-icon bi bi-clock-history"></i>
+                <i class="nav-icon ti ti-history"></i>
                 <p>Log Aktivitas</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="<?= url('/settings'); ?>" class="nav-link <?= nav_active('/settings'); ?>">
-                <i class="nav-icon bi bi-gear"></i>
+                <i class="nav-icon ti ti-settings"></i>
                 <p>Pengaturan</p>
               </a>
             </li>
@@ -197,37 +197,39 @@ try {
 
   <!-- ================= Main ================= -->
   <main class="app-main">
-    <div class="app-content-header">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-sm-6">
-            <h1 class="mb-0 fs-3"><?= e($pageTitle); ?></h1>
-          </div>
-          <div class="col-sm-6">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb float-sm-end mb-0">
-                <li class="breadcrumb-item"><a href="<?= url('/dashboard'); ?>">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><?= e($pageTitle); ?></li>
-              </ol>
-            </nav>
+    <?php if (empty($hidePageHeader)): ?>
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-sm-6">
+              <h1 class="mb-0 fs-3"><?= e($pageTitle); ?></h1>
+            </div>
+            <div class="col-sm-6">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb float-sm-end mb-0">
+                  <li class="breadcrumb-item"><a href="<?= url('/dashboard'); ?>">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><?= e($pageTitle); ?></li>
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
 
-    <div class="app-content">
+    <div class="app-content<?= empty($hidePageHeader) ? '' : ' app-content-no-header'; ?>">
       <div class="container-fluid">
 
         <?php if ($flashSuccess): ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="bi bi-check-circle-fill me-2"></i><?= e($flashSuccess); ?>
+            <i class="ti ti-circle-check-filled me-2"></i><?= e($flashSuccess); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup"></button>
           </div>
         <?php endif; ?>
 
         <?php if ($flashError): ?>
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill me-2"></i><?= e($flashError); ?>
+            <i class="ti ti-alert-triangle-filled me-2"></i><?= e($flashError); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tutup"></button>
           </div>
         <?php endif; ?>

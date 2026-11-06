@@ -7,14 +7,14 @@ require __DIR__ . '/../layouts/admin_header.php';
 
 $fileIcon = static function (?string $name): string {
     return match (strtolower(pathinfo((string) $name, PATHINFO_EXTENSION))) {
-        'pdf' => 'bi-file-earmark-pdf text-danger',
-        'doc', 'docx' => 'bi-file-earmark-word text-primary',
-        'xls', 'xlsx', 'csv' => 'bi-file-earmark-excel text-success',
-        'ppt', 'pptx' => 'bi-file-earmark-ppt text-warning',
-        'zip', 'rar' => 'bi-file-earmark-zip text-secondary',
-        'jpg', 'jpeg', 'png', 'gif', 'webp' => 'bi-file-earmark-image text-info',
-        'txt' => 'bi-file-earmark-text text-secondary',
-        default => 'bi-file-earmark text-secondary',
+        'pdf' => 'ti-file-type-pdf text-danger',
+        'doc', 'docx' => 'ti-file-type-docx text-primary',
+        'xls', 'xlsx', 'csv' => 'ti-file-type-xls text-success',
+        'ppt', 'pptx' => 'ti-file-type-ppt text-warning',
+        'zip', 'rar' => 'ti-file-zip text-secondary',
+        'jpg', 'jpeg', 'png', 'gif', 'webp' => 'ti-photo text-info',
+        'txt' => 'ti-file-text text-secondary',
+        default => 'ti-file text-secondary',
     };
 };
 ?>
@@ -22,13 +22,13 @@ $fileIcon = static function (?string $name): string {
 <div class="page-heading">
   <p class="subtitle">Repositori dokumen resmi perusahaan.</p>
   <a href="<?= url('/documents/create'); ?>" class="btn btn-primary">
-    <i class="bi bi-upload me-1"></i>Upload Dokumen
+    <i class="ti ti-upload me-1"></i>Upload Dokumen
   </a>
 </div>
 
 <div class="card">
   <div class="card-header card-toolbar">
-    <h2 class="card-title"><i class="bi bi-folder2-open me-2 text-primary"></i>Daftar Dokumen</h2>
+    <h2 class="card-title"><i class="ti ti-folder-open me-2 text-primary"></i>Daftar Dokumen</h2>
     <span class="badge badge-soft"><?= count($documents); ?> dokumen</span>
   </div>
   <div class="card-body p-0">
@@ -50,7 +50,7 @@ $fileIcon = static function (?string $name): string {
               <tr>
                 <td>
                   <div class="d-flex align-items-center gap-2">
-                    <i class="bi <?= $fileIcon($row['original_name']); ?> fs-4"></i>
+                    <i class="ti <?= $fileIcon($row['original_name']); ?> fs-4"></i>
                     <div style="min-width: 0;">
                       <div class="fw-semibold text-truncate" style="max-width: 220px;"><?= e($row['title']); ?></div>
                       <div class="small text-secondary text-truncate" style="max-width: 220px;">
@@ -69,14 +69,14 @@ $fileIcon = static function (?string $name): string {
                   <div class="table-actions">
                     <a href="<?= url('/documents/' . (int) $row['id'] . '/download'); ?>"
                        class="btn btn-sm btn-outline-success btn-icon" aria-label="Unduh dokumen">
-                      <i class="bi bi-download"></i>
+                      <i class="ti ti-download"></i>
                     </a>
                     <?php if (Auth::isAdmin() || (int) $row['uploaded_by'] === Auth::id()): ?>
                       <form method="post" action="<?= url('/documents/' . (int) $row['id'] . '/delete'); ?>"
                             onsubmit="return confirm('Hapus dokumen ini?');">
                         <?= csrf_field(); ?>
                         <button type="submit" class="btn btn-sm btn-outline-danger btn-icon" aria-label="Hapus dokumen">
-                          <i class="bi bi-trash"></i>
+                          <i class="ti ti-trash"></i>
                         </button>
                       </form>
                     <?php endif; ?>
@@ -89,7 +89,7 @@ $fileIcon = static function (?string $name): string {
       </div>
     <?php else: ?>
       <div class="empty-state">
-        <i class="bi bi-folder2-open"></i>
+        <i class="ti ti-folder-open"></i>
         <h6>Belum ada dokumen</h6>
         <p>Unggah dokumen pertama untuk membangun repositori.</p>
       </div>

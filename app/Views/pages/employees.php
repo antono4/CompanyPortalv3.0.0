@@ -8,14 +8,14 @@ require __DIR__ . '/../layouts/admin_header.php';
   <p class="subtitle">Data karyawan aktif dan nonaktif perusahaan.</p>
   <?php if (is_admin()): ?>
     <a href="<?= url('/employees/create'); ?>" class="btn btn-primary">
-      <i class="bi bi-person-plus me-1"></i>Tambah Karyawan
+      <i class="ti ti-user-plus me-1"></i>Tambah Karyawan
     </a>
   <?php endif; ?>
 </div>
 
 <div class="card">
   <div class="card-header card-toolbar">
-    <h2 class="card-title"><i class="bi bi-person-vcard me-2 text-primary"></i>Daftar Karyawan</h2>
+    <h2 class="card-title"><i class="ti ti-id me-2 text-primary"></i>Daftar Karyawan</h2>
     <span class="badge badge-soft"><?= count($employees); ?> karyawan</span>
   </div>
   <div class="card-body p-0">
@@ -68,13 +68,13 @@ require __DIR__ . '/../layouts/admin_header.php';
                     <div class="table-actions">
                       <a href="<?= url('/employees/' . (int) $row['id'] . '/edit'); ?>"
                          class="btn btn-sm btn-outline-primary btn-icon" aria-label="Edit karyawan">
-                        <i class="bi bi-pencil"></i>
+                        <i class="ti ti-pencil"></i>
                       </a>
                       <form method="post" action="<?= url('/employees/' . (int) $row['id'] . '/delete'); ?>"
                             onsubmit="return confirm('Hapus data karyawan ini?');">
                         <?= csrf_field(); ?>
                         <button type="submit" class="btn btn-sm btn-outline-danger btn-icon" aria-label="Hapus karyawan">
-                          <i class="bi bi-trash"></i>
+                          <i class="ti ti-trash"></i>
                         </button>
                       </form>
                     </div>
@@ -87,7 +87,7 @@ require __DIR__ . '/../layouts/admin_header.php';
       </div>
     <?php else: ?>
       <div class="empty-state">
-        <i class="bi bi-person-vcard"></i>
+        <i class="ti ti-id"></i>
         <h6>Belum ada data karyawan</h6>
         <p>Tambahkan karyawan untuk melengkapi data organisasi.</p>
       </div>

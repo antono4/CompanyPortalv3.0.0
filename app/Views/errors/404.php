@@ -13,7 +13,7 @@ use App\Config\App;
   <link rel="shortcut icon" href="<?= asset('img/favicon.ico'); ?>">
   <link rel="apple-touch-icon" sizes="180x180" href="<?= asset('img/apple-touch-icon.png'); ?>">
   <link rel="stylesheet" href="<?= asset('vendor/bootstrap/css/bootstrap.min.css'); ?>">
-  <link rel="stylesheet" href="<?= asset('vendor/bootstrap-icons/bootstrap-icons.min.css'); ?>">
+  <link rel="stylesheet" href="<?= asset('vendor/tabler-icons/tabler-icons.min.css'); ?>">
   <link rel="stylesheet" href="<?= asset('css/app.css'); ?>">
 </head>
 <body class="bg-body-tertiary">
@@ -22,11 +22,11 @@ use App\Config\App;
       <div class="col-lg-6">
         <div class="card text-center">
           <div class="card-body py-5">
-            <i class="bi bi-compass text-primary" style="font-size: 3.5rem;"></i>
+            <i class="ti ti-compass text-primary" style="font-size: 3.5rem;"></i>
             <h1 class="display-5 fw-bold mt-3 mb-1">404</h1>
             <p class="text-secondary mb-4">Halaman yang Anda cari tidak ditemukan.</p>
             <a href="<?= url('/dashboard'); ?>" class="btn btn-primary">
-              <i class="bi bi-house me-1"></i>Kembali ke Dashboard
+              <i class="ti ti-home me-1"></i>Kembali ke Dashboard
             </a>
           </div>
         </div>

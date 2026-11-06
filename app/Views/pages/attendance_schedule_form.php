@@ -30,14 +30,14 @@ $isActive = $hasOld
 <div class="page-heading">
   <p class="subtitle mb-0"><?= $isEdit ? 'Perbarui shift dan toleransi absensi.' : 'Buat shift kerja baru untuk karyawan.'; ?></p>
   <a href="<?= url('/attendance/schedules'); ?>" class="btn btn-outline-secondary">
-    <i class="bi bi-arrow-left me-1"></i>Kembali
+    <i class="ti ti-arrow-left me-1"></i>Kembali
   </a>
 </div>
 
 <div class="card form-card">
   <div class="card-header">
     <h2 class="card-title">
-      <i class="bi bi-calendar-plus me-2 text-primary"></i><?= $isEdit ? 'Edit Jadwal Absensi' : 'Tambah Jadwal Absensi'; ?>
+      <i class="ti ti-calendar-plus me-2 text-primary"></i><?= $isEdit ? 'Edit Jadwal Absensi' : 'Tambah Jadwal Absensi'; ?>
     </h2>
   </div>
   <div class="card-body">
@@ -98,7 +98,7 @@ $isActive = $hasOld
       <div class="d-flex justify-content-end gap-2 mt-4">
         <a href="<?= url('/attendance/schedules'); ?>" class="btn btn-outline-secondary">Batal</a>
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-save me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan Jadwal'; ?>
+          <i class="ti ti-device-floppy me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan Jadwal'; ?>
         </button>
       </div>
     </form>

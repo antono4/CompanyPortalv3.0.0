@@ -9,13 +9,13 @@ require __DIR__ . '/../layouts/admin_header.php';
 <div class="page-heading">
   <p class="subtitle">Kelola akun pengguna dan hak akses portal.</p>
   <a href="<?= url('/users/create'); ?>" class="btn btn-primary">
-    <i class="bi bi-person-plus me-1"></i>Tambah User
+    <i class="ti ti-user-plus me-1"></i>Tambah User
   </a>
 </div>
 
 <div class="card">
   <div class="card-header card-toolbar">
-    <h2 class="card-title"><i class="bi bi-people me-2 text-primary"></i>Daftar User</h2>
+    <h2 class="card-title"><i class="ti ti-users me-2 text-primary"></i>Daftar User</h2>
     <span class="badge badge-soft"><?= count($users); ?> user</span>
   </div>
   <div class="card-body p-0">
@@ -47,7 +47,7 @@ require __DIR__ . '/../layouts/admin_header.php';
                 </td>
                 <td><code><?= e($row['username']); ?></code></td>
                 <td>
-                  <span class="badge <?= $row['role'] === 'admin' ? 'text-bg-danger' : 'text-bg-primary'; ?>">
+                  <span class="badge <?= $row['role'] === 'admin' ? 'badge-role-admin' : 'badge-role-user'; ?>">
                     <?= $row['role'] === 'admin' ? 'Administrator' : 'User'; ?>
                   </span>
                 </td>
@@ -64,14 +64,14 @@ require __DIR__ . '/../layouts/admin_header.php';
                   <div class="table-actions">
                     <a href="<?= url('/users/' . (int) $row['id'] . '/edit'); ?>"
                        class="btn btn-sm btn-outline-primary btn-icon" aria-label="Edit user">
-                      <i class="bi bi-pencil"></i>
+                      <i class="ti ti-pencil"></i>
                     </a>
                     <?php if ((int) $row['id'] !== Auth::id()): ?>
                       <form method="post" action="<?= url('/users/' . (int) $row['id'] . '/delete'); ?>"
                             onsubmit="return confirm('Hapus user ini?');">
                         <?= csrf_field(); ?>
                         <button type="submit" class="btn btn-sm btn-outline-danger btn-icon" aria-label="Hapus user">
-                          <i class="bi bi-trash"></i>
+                          <i class="ti ti-trash"></i>
                         </button>
                       </form>
                     <?php endif; ?>
@@ -84,7 +84,7 @@ require __DIR__ . '/../layouts/admin_header.php';
       </div>
     <?php else: ?>
       <div class="empty-state">
-        <i class="bi bi-people"></i>
+        <i class="ti ti-users"></i>
         <h6>Belum ada user</h6>
         <p>Tambahkan user pertama untuk mulai berkolaborasi.</p>
       </div>

@@ -211,32 +211,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     body {
       margin: 0; min-height: 100vh; padding: 2rem 1rem;
       font-family: "Segoe UI", system-ui, sans-serif;
-      background: linear-gradient(160deg, #0f172a, #1e293b 55%, #0f172a);
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(126,29,178,.45), transparent 60%),
+        radial-gradient(800px 450px at 110% 110%, rgba(79,35,155,.4), transparent 55%),
+        linear-gradient(160deg, #14082b, #2b0f4f 55%, #14082b);
       display: flex; align-items: center; justify-content: center;
     }
     .wrap { width: 100%; max-width: 640px; }
-    .card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 60px -20px rgba(2,6,23,.6); }
-    .head { padding: 1.75rem 1.75rem 1rem; }
-    .head h1 { margin: .6rem 0 .25rem; font-size: 1.3rem; color: #0f172a; }
-    .head p { margin: 0; color: #64748b; font-size: .88rem; }
-    .mark { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg,#3b82f6,#1d4ed8); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; }
+    .card { background: #fff; border-radius: 16px; overflow: hidden; border-top: 4px solid #6a1b9a; box-shadow: 0 30px 60px -20px rgba(2,6,23,.6); }
+    .head { padding: 1.75rem 1.75rem 1rem; background: linear-gradient(180deg, #faf7ff, #fff); }
+    .head h1 { margin: .6rem 0 .25rem; font-size: 1.3rem; color: #2b0f4f; }
+    .head p { margin: 0; color: #6b6478; font-size: .88rem; }
+    .mark { width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg,#7e1db2,#4f239b); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; }
     .body { padding: .5rem 1.75rem 1.75rem; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
     @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
     label { display: block; font-size: .8rem; font-weight: 600; color: #334155; margin-bottom: .3rem; }
-    input { width: 100%; padding: .55rem .7rem; border: 1px solid #d7dce5; border-radius: 8px; font-size: .88rem; }
-    input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 .2rem rgba(37,99,235,.12); }
+    input { width: 100%; padding: .55rem .7rem; border: 1px solid #ded4ea; border-radius: 8px; font-size: .88rem; }
+    input:focus { outline: none; border-color: #6a1b9a; box-shadow: 0 0 0 .2rem rgba(106,27,154,.14); }
     .full { grid-column: 1 / -1; }
-    .section { margin: 1.1rem 0 .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .1em; color: #64748b; text-transform: uppercase; }
-    button { width: 100%; margin-top: 1.2rem; padding: .7rem; border: 0; border-radius: 9px; background: #2563eb; color: #fff; font-weight: 600; font-size: .9rem; cursor: pointer; }
-    button:hover { background: #1d4ed8; }
+    .section { margin: 1.1rem 0 .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .1em; color: #6b6478; text-transform: uppercase; }
+    button { width: 100%; margin-top: 1.2rem; padding: .7rem; border: 0; border-radius: 9px; background: linear-gradient(135deg,#6a1b9a,#7e1db2); color: #fff; font-weight: 600; font-size: .9rem; cursor: pointer; }
+    button:hover { background: linear-gradient(135deg,#4f239b,#6a1b9a); }
     .alert { padding: .75rem .9rem; border-radius: 9px; font-size: .84rem; margin-bottom: 1rem; }
     .alert-error { background: #fef2f2; color: #991b1b; }
     .alert-ok { background: #f0fdf4; color: #166534; }
     .alert ul { margin: 0; padding-left: 1.1rem; }
-    .foot { padding: .9rem; text-align: center; font-size: .75rem; color: #64748b; background: #f8fafc; border-top: 1px solid #e5e7eb; }
-    a.btn { display: inline-block; padding: .6rem 1rem; background: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-size: .88rem; font-weight: 600; }
-    .hint { font-size: .76rem; color: #64748b; margin-top: .25rem; }
+    .foot { padding: .9rem; text-align: center; font-size: .75rem; color: #6b6478; background: #faf7ff; border-top: 1px solid #e9e3f2; }
+    a.btn { display: inline-block; padding: .6rem 1rem; background: linear-gradient(135deg,#6a1b9a,#7e1db2); color: #fff; text-decoration: none; border-radius: 8px; font-size: .88rem; font-weight: 600; }
+    .hint { font-size: .76rem; color: #6b6478; margin-top: .25rem; }
   </style>
 </head>
 <body>

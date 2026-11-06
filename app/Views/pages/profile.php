@@ -4,6 +4,13 @@ declare(strict_types=1);
 require __DIR__ . '/../layouts/admin_header.php';
 ?>
 
+<div class="page-heading">
+  <p class="subtitle">Kelola informasi profil, foto, dan keamanan akun Anda.</p>
+  <a href="<?= url('/change-password'); ?>" class="btn btn-outline-primary">
+    <i class="ti ti-shield-lock me-1"></i>Ganti Password
+  </a>
+</div>
+
 <div class="row g-3">
   <div class="col-lg-4">
     <div class="card h-100">
@@ -12,7 +19,7 @@ require __DIR__ . '/../layouts/admin_header.php';
         <h2 class="h5 fw-bold mb-1"><?= e($user['fullname'] ?? ''); ?></h2>
         <p class="text-secondary small mb-3">@<?= e($user['username'] ?? ''); ?></p>
 
-        <span class="badge <?= ($user['role'] ?? '') === 'admin' ? 'text-bg-danger' : 'text-bg-primary'; ?> mb-3">
+        <span class="badge <?= ($user['role'] ?? '') === 'admin' ? 'badge-role-admin' : 'badge-role-user'; ?> mb-3">
           <?= ($user['role'] ?? '') === 'admin' ? 'Administrator' : 'User'; ?>
         </span>
 
@@ -24,7 +31,7 @@ require __DIR__ . '/../layouts/admin_header.php';
                  accept="image/jpeg,image/png,image/gif,image/webp" required>
           <div class="form-text">JPG, PNG, GIF, atau WEBP. Maksimal 3 MB.</div>
           <button type="submit" class="btn btn-primary btn-sm w-100 mt-2">
-            <i class="bi bi-camera me-1"></i><?= avatar_url($user) ? 'Ganti Foto' : 'Unggah Foto'; ?>
+            <i class="ti ti-camera me-1"></i><?= avatar_url($user) ? 'Ganti Foto' : 'Unggah Foto'; ?>
           </button>
         </form>
 
@@ -33,7 +40,7 @@ require __DIR__ . '/../layouts/admin_header.php';
                 onsubmit="return confirm('Hapus foto profil Anda?');">
             <?= csrf_field(); ?>
             <button type="submit" class="btn btn-outline-danger btn-sm w-100">
-              <i class="bi bi-trash me-1"></i>Hapus Foto
+              <i class="ti ti-trash me-1"></i>Hapus Foto
             </button>
           </form>
         <?php endif; ?>
@@ -62,7 +69,7 @@ require __DIR__ . '/../layouts/admin_header.php';
         </div>
 
         <a href="<?= url('/change-password'); ?>" class="btn btn-outline-primary w-100 mt-3">
-          <i class="bi bi-key me-1"></i>Ganti Password
+          <i class="ti ti-key me-1"></i>Ganti Password
         </a>
       </div>
     </div>
@@ -71,7 +78,7 @@ require __DIR__ . '/../layouts/admin_header.php';
   <div class="col-lg-8">
     <div class="card h-100">
       <div class="card-header">
-        <h2 class="card-title"><i class="bi bi-pencil-square me-2 text-primary"></i>Edit Profil</h2>
+        <h2 class="card-title"><i class="ti ti-edit me-2 text-primary"></i>Edit Profil</h2>
       </div>
       <div class="card-body">
         <form method="post" action="<?= url('/profile'); ?>">
@@ -105,7 +112,7 @@ require __DIR__ . '/../layouts/admin_header.php';
 
           <div class="d-flex justify-content-end mt-4">
             <button type="submit" class="btn btn-primary">
-              <i class="bi bi-save me-1"></i>Simpan Profil
+              <i class="ti ti-device-floppy me-1"></i>Simpan Profil
             </button>
           </div>
         </form>

@@ -8,7 +8,7 @@ $image = news_image_url($announcement);
 
 <div class="mb-3">
   <a href="<?= url('/announcements'); ?>" class="text-secondary text-decoration-none small">
-    <i class="bi bi-arrow-left me-1"></i>Kembali ke Berita
+    <i class="ti ti-arrow-left me-1"></i>Kembali ke Berita
   </a>
 </div>
 
@@ -16,12 +16,12 @@ $image = news_image_url($announcement);
   <div class="col-lg-8">
     <article class="card article-card">
       <header class="article-header">
-        <span class="news-kicker"><i class="bi bi-megaphone"></i>Pengumuman</span>
+        <span class="news-kicker"><i class="ti ti-speakerphone"></i>Pengumuman</span>
         <h1 class="article-title mt-3"><?= e($announcement['title']); ?></h1>
         <div class="news-meta mt-3">
-          <span><i class="bi bi-person-circle"></i><?= e($announcement['author'] ?? 'Admin'); ?></span>
-          <span><i class="bi bi-calendar3"></i><?= e(fmt_datetime($announcement['created_at'])); ?></span>
-          <span><i class="bi bi-clock"></i><?= reading_time($announcement['description']); ?> menit baca</span>
+          <span><i class="ti ti-user-circle"></i><?= e($announcement['author'] ?? 'Admin'); ?></span>
+          <span><i class="ti ti-calendar"></i><?= e(fmt_datetime($announcement['created_at'])); ?></span>
+          <span><i class="ti ti-clock"></i><?= reading_time($announcement['description']); ?> menit baca</span>
         </div>
       </header>
 
@@ -38,13 +38,13 @@ $image = news_image_url($announcement);
       <?php if (is_admin()): ?>
         <div class="article-actions">
           <a href="<?= url('/announcements/' . (int) $announcement['id'] . '/edit'); ?>" class="btn btn-sm btn-outline-primary">
-            <i class="bi bi-pencil me-1"></i>Edit Berita
+            <i class="ti ti-pencil me-1"></i>Edit Berita
           </a>
           <form method="post" action="<?= url('/announcements/' . (int) $announcement['id'] . '/delete'); ?>"
                 onsubmit="return confirm('Hapus berita ini?');">
             <?= csrf_field(); ?>
             <button type="submit" class="btn btn-sm btn-outline-danger">
-              <i class="bi bi-trash me-1"></i>Hapus
+              <i class="ti ti-trash me-1"></i>Hapus
             </button>
           </form>
         </div>
@@ -55,7 +55,7 @@ $image = news_image_url($announcement);
   <div class="col-lg-4">
     <div class="card sidebar-card">
       <div class="card-header">
-        <h2 class="card-title"><i class="bi bi-newspaper me-2 text-primary"></i>Berita Lainnya</h2>
+        <h2 class="card-title"><i class="ti ti-news me-2 text-primary"></i>Berita Lainnya</h2>
       </div>
 
       <?php if ($others !== []): ?>
@@ -67,18 +67,18 @@ $image = news_image_url($announcement);
               <?php if ($otherImage !== null): ?>
                 <img src="<?= e($otherImage); ?>" alt="" class="news-side-thumb" loading="lazy">
               <?php else: ?>
-                <span class="news-side-thumb news-placeholder"><i class="bi bi-megaphone"></i></span>
+                <span class="news-side-thumb news-placeholder"><i class="ti ti-speakerphone"></i></span>
               <?php endif; ?>
               <span class="news-side-text">
                 <span class="news-side-title"><?= e($other['title']); ?></span>
-                <span class="news-side-date"><i class="bi bi-calendar3 me-1"></i><?= e(fmt_date($other['created_at'])); ?></span>
+                <span class="news-side-date"><i class="ti ti-calendar me-1"></i><?= e(fmt_date($other['created_at'])); ?></span>
               </span>
             </a>
           <?php endforeach; ?>
         </div>
       <?php else: ?>
         <div class="card-body text-center text-secondary small py-4">
-          <i class="bi bi-journal-x d-block fs-3 mb-2 opacity-50"></i>
+          <i class="ti ti-file-x d-block fs-3 mb-2 opacity-50"></i>
           Belum ada berita lain.
         </div>
       <?php endif; ?>

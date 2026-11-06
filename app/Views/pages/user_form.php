@@ -12,14 +12,14 @@ $action = $isEdit ? url('/users/' . (int) $user['id']) : url('/users');
     <?= $isEdit ? 'Perbarui data akun pengguna.' : 'Buat akun pengguna baru untuk portal.'; ?>
   </p>
   <a href="<?= url('/users'); ?>" class="btn btn-outline-secondary">
-    <i class="bi bi-arrow-left me-1"></i>Kembali
+    <i class="ti ti-arrow-left me-1"></i>Kembali
   </a>
 </div>
 
 <div class="card form-card">
   <div class="card-header">
     <h2 class="card-title">
-      <i class="bi <?= $isEdit ? 'bi-pencil-square' : 'bi-person-plus'; ?> me-2 text-primary"></i>
+      <i class="ti <?= $isEdit ? 'ti-edit' : 'ti-user-plus'; ?> me-2 text-primary"></i>
       <?= $isEdit ? 'Edit User' : 'Tambah User'; ?>
     </h2>
   </div>
@@ -93,7 +93,7 @@ $action = $isEdit ? url('/users/' . (int) $user['id']) : url('/users');
       <div class="d-flex justify-content-end gap-2 mt-4">
         <a href="<?= url('/users'); ?>" class="btn btn-outline-secondary">Batal</a>
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-save me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan User'; ?>
+          <i class="ti ti-device-floppy me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan User'; ?>
         </button>
       </div>
     </form>

@@ -10,14 +10,14 @@ $action = $isEdit ? url('/employees/' . (int) $employee['id']) : url('/employees
 <div class="page-heading">
   <p class="subtitle"><?= $isEdit ? 'Perbarui data karyawan.' : 'Lengkapi data karyawan baru.'; ?></p>
   <a href="<?= url('/employees'); ?>" class="btn btn-outline-secondary">
-    <i class="bi bi-arrow-left me-1"></i>Kembali
+    <i class="ti ti-arrow-left me-1"></i>Kembali
   </a>
 </div>
 
 <div class="card form-card">
   <div class="card-header">
     <h2 class="card-title">
-      <i class="bi bi-person-vcard me-2 text-primary"></i><?= $isEdit ? 'Edit Karyawan' : 'Tambah Karyawan'; ?>
+      <i class="ti ti-id me-2 text-primary"></i><?= $isEdit ? 'Edit Karyawan' : 'Tambah Karyawan'; ?>
     </h2>
   </div>
   <div class="card-body">
@@ -93,7 +93,7 @@ $action = $isEdit ? url('/employees/' . (int) $employee['id']) : url('/employees
       <div class="d-flex justify-content-end gap-2 mt-4">
         <a href="<?= url('/employees'); ?>" class="btn btn-outline-secondary">Batal</a>
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-save me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan'; ?>
+          <i class="ti ti-device-floppy me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan'; ?>
         </button>
       </div>
     </form>

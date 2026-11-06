@@ -10,14 +10,14 @@ $action = $isEdit ? url('/departments/' . (int) $department['id']) : url('/depar
 <div class="page-heading">
   <p class="subtitle"><?= $isEdit ? 'Perbarui data departemen.' : 'Buat departemen baru.'; ?></p>
   <a href="<?= url('/departments'); ?>" class="btn btn-outline-secondary">
-    <i class="bi bi-arrow-left me-1"></i>Kembali
+    <i class="ti ti-arrow-left me-1"></i>Kembali
   </a>
 </div>
 
 <div class="card form-card narrow">
   <div class="card-header">
     <h2 class="card-title">
-      <i class="bi bi-diagram-3 me-2 text-primary"></i><?= $isEdit ? 'Edit Departemen' : 'Tambah Departemen'; ?>
+      <i class="ti ti-sitemap me-2 text-primary"></i><?= $isEdit ? 'Edit Departemen' : 'Tambah Departemen'; ?>
     </h2>
   </div>
   <div class="card-body">
@@ -47,7 +47,7 @@ $action = $isEdit ? url('/departments/' . (int) $department['id']) : url('/depar
       <div class="d-flex justify-content-end gap-2 mt-4">
         <a href="<?= url('/departments'); ?>" class="btn btn-outline-secondary">Batal</a>
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-save me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan'; ?>
+          <i class="ti ti-device-floppy me-1"></i><?= $isEdit ? 'Simpan Perubahan' : 'Simpan'; ?>
         </button>
       </div>
     </form>

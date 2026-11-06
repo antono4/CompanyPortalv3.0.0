@@ -7,13 +7,13 @@ require __DIR__ . '/../layouts/admin_header.php';
 <div class="page-heading">
   <p class="subtitle">Gunakan password yang kuat dan tidak dipakai di layanan lain.</p>
   <a href="<?= url('/profile'); ?>" class="btn btn-outline-secondary">
-    <i class="bi bi-arrow-left me-1"></i>Kembali ke Profil
+    <i class="ti ti-arrow-left me-1"></i>Kembali ke Profil
   </a>
 </div>
 
 <div class="card form-card narrow">
   <div class="card-header">
-    <h2 class="card-title"><i class="bi bi-key me-2 text-primary"></i>Ganti Password</h2>
+    <h2 class="card-title"><i class="ti ti-key me-2 text-primary"></i>Ganti Password</h2>
   </div>
   <div class="card-body">
     <form method="post" action="<?= url('/change-password'); ?>">
@@ -41,7 +41,7 @@ require __DIR__ . '/../layouts/admin_header.php';
       <div class="d-flex justify-content-end gap-2 mt-4">
         <a href="<?= url('/profile'); ?>" class="btn btn-outline-secondary">Batal</a>
         <button type="submit" class="btn btn-primary">
-          <i class="bi bi-shield-lock me-1"></i>Simpan Password
+          <i class="ti ti-shield-lock me-1"></i>Simpan Password
         </button>
       </div>
     </form>
